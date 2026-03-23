@@ -19,7 +19,6 @@ This is a Flask-based machine learning web application that predicts employee pr
 - model.py → ML model training
 - gwp.pkl → Trained model
 - templates/ → HTML files
-- static/ → Images/CSS
 
 ## ▶️ How to Run
 1. Install dependencies
