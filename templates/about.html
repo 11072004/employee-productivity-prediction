@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f26c3c, #ff8a5c);
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+        .navbar-custom {
+            background-color: #1f252b;
+            padding: 10px 18px;
+        }
+
+        .navbar-brand-custom {
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .nav-btn {
+            background-color: #27c2f1;
+            color: black;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-left: 8px;
+            font-size: 14px;
+        }
+
+        /* MAIN CARD */
+        .main-wrapper {
+            min-height: calc(100vh - 56px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .about-card {
+            width: 100%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            padding: 40px;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #1f252b;
+        }
+
+        .section {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #1f252b;
+        }
+
+        .tech-box {
+            background: #f4f7fb;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-custom {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: #27c2f1;
+            color: black;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar-custom d-flex justify-content-between align-items-center">
+        <a href="/" class="navbar-brand-custom">Employee Productivity Prediction Using ML</a>
+        <div>
+            <a href="/" class="nav-btn">Home</a>
+            <a href="/about" class="nav-btn">About</a>
+            <a href="/predict" class="nav-btn">Predict</a>
+        </div>
+    </nav>
+
+    <!-- CONTENT -->
+    <div class="main-wrapper">
+        <div class="about-card">
+
+            <div class="title">About This Project</div>
+
+            <div class="section">
+                This project focuses on predicting <span class="highlight">employee productivity</span> using Machine Learning techniques. 
+                The goal is to help organizations understand and improve workforce efficiency.
+            </div>
+
+            <div class="section">
+                We analyze various factors such as department, working hours, incentives, idle time, and more to predict how productive an employee will be.
+            </div>
+
+            <div class="section">
+                Multiple machine learning models were trained and compared, including:
+            </div>
+
+            <div class="tech-box">
+                • Linear Regression<br>
+                • Random Forest<br>
+                • XGBoost (Best Performing Model)
+            </div>
+
+            <div class="section">
+                Based on performance metrics like <span class="highlight">MSE, MAE, and R² Score</span>, the best model was selected and deployed.
+            </div>
+
+            <div class="section">
+                This web application allows users to input employee data and instantly get productivity predictions.
+            </div>
+
+            <div style="text-align:center;">
+                <a href="/predict" class="btn-custom">Try Prediction</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
