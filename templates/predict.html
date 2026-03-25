@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar-custom {
+            background-color: #1f252b;
+            padding: 10px 18px;
+        }
+
+        .navbar-brand-custom {
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .nav-btn {
+            background-color: #27c2f1;
+            color: black;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 3px;
+            text-decoration: none;
+            margin-left: 8px;
+            font-size: 14px;
+        }
+
+        .main-section {
+            min-height: 92vh;
+            background-image: url("https://cdn.pixabay.com/photo/2021/10/30/20/11/office-6755544_640.png");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 40px 90px;
+        }
+
+        .form-container {
+            width: 520px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 55px;
+            row-gap: 10px;
+            color: #2a2a2a;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight:bold;
+            font-size: 13px;
+            margin-bottom: 4px;
+            color:black;
+        }
+
+        .form-group input {
+            width: 100%;
+            height: 28px;
+            border: none;
+            border-radius: 2px;
+            padding: 4px 8px;
+            font-size: 13px;
+            background-color: pink;
+        }
+
+        .submit-wrap {
+            grid-column: 1 / 2;
+            margin-top: 10px;
+        }
+
+        .submit-btn {
+            background-color: #7ed957;
+            border: none;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 3px;
+            font-size: 13px;
+        }
+
+        .prediction-box {
+            grid-column: 1 / 3;
+            margin-top: 10px;
+            background: rgba(255,255,255,0.75);
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-weight: bold;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar-custom d-flex justify-content-between align-items-center">
+        <a href="/" class="navbar-brand-custom">Employee Productivity Prediction Using ML</a>
+        <div>
+            <a href="/" class="nav-btn">Home</a>
+            <a href="/about" class="nav-btn">About</a>
+            <a href="/predict" class="nav-btn">Predict</a>
+        </div>
+    </nav>
+
+    <div class="main-section">
+        <form action="/pred" method="post" class="form-container">
+
+            <div class="form-group">
+                <label>quarter</label>
+                <input type="text" name="quarter" required>
+            </div>
+
+            <div class="form-group">
+                <label>department</label>
+                <input type="text" name="department" required>
+            </div>
+
+            <div class="form-group">
+                <label>day</label>
+                <input type="text" name="day" required>
+            </div>
+
+            <div class="form-group">
+                <label>team</label>
+                <input type="text" name="team" required>
+            </div>
+
+            <div class="form-group">
+                <label>targeted_productivity</label>
+                <input type="text" name="targeted_productivity" required>
+            </div>
+
+            <div class="form-group">
+                <label>smv</label>
+                <input type="text" name="smv" required>
+            </div>
+
+            <div class="form-group">
+                <label>over_time</label>
+                <input type="text" name="over_time" required>
+            </div>
+
+            <div class="form-group">
+                <label>incentive</label>
+                <input type="text" name="incentive" required>
+            </div>
+
+            <div class="form-group">
+                <label>idle_time</label>
+                <input type="text" name="idle_time" required>
+            </div>
+
+            <div class="form-group">
+                <label>idle_men</label>
+                <input type="text" name="idle_men" required>
+            </div>
+
+            <div class="form-group">
+                <label>no_of_style_change</label>
+                <input type="text" name="no_of_style_change" required>
+            </div>
+
+            <div class="form-group">
+                <label>no_of_workers</label>
+                <input type="text" name="no_of_workers" required>
+            </div>
+
+            <div class="form-group">
+                <label>month</label>
+                <input type="text" name="month" required>
+            </div>
+
+            <div class="submit-wrap">
+                <button type="submit" class="submit-btn">SUBMIT</button>
+            </div>
+
+            {% if prediction %}
+            <div class="prediction-box">
+                Predicted Productivity: {{ prediction }}
+            </div>
+            {% endif %}
+
+        </form>
+    </div>
+
+</body>
+</html>
